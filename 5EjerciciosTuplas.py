@@ -5,6 +5,7 @@ print("")
 print("El primer nombre de la tupla es: ",Nombres[0])
 print("El último nombre de la tupla es: ",Nombres[-1])
 print("")
+#----------------------------------------------------------------------------------------------#
 #Ejercicio no2
 sum_num=(1,2,4,6,4,8,4)
 suma=0
@@ -14,6 +15,7 @@ print("")
 print("La suma de la tupla con numeros",sum_num )
 print("es: ",suma)
 print("")
+#----------------------------------------------------------------------------------------------#
 #Ejercicio No3
 notas=(1.0,3.0,5.0,4.2,2.5)
 suma= 0
@@ -24,21 +26,22 @@ print("")
 print("El promedio de las notas, ",notas)
 print("es: ",promedio)
 print("")
+#----------------------------------------------------------------------------------------------#
 #Ejercicio No4
-permitido=("hola","seguro","asignación","permitidas","palabras")
-ing=input("Por favor ingrese un palabra para validar si esta en las palabras permitidas")
-val=False
-for permi in permitido:
-    if(permi==ing):
-        val=True
-    else:
-        val= False 
-print("")       
-if(val==True):    
-    print("La palabra ingresada,(",ing,") si esta ")
-else:
-     print("La palabra ingresada,(",ing,") si esta ")
+palab=("hola","prueba","lista","palabra", "aceptada", "Sí", "No")
+ing=input("por favor ingrese la palabra que se quiere validar si existe en la lista")
+val=1
+while val!=0:
+  if ing in palab:
+    print ("La palabra,(",ing,") se encuentra en la lista aceptada")
+    val=0
+  else:
+    print ("La palabra,(",ing,") no se encuentra en la lista aceptada")
+    val=1
+    ing=input("por favor ingrese la palabra que se quiere validar si existe en la lista")
+print("Gracias por usar el sistema de validación de palabras")
 print("")
+#----------------------------------------------------------------------------------------------#
 #Ejercicio No5
 edades=(18,22,19,25,21,10,2,5,3)
 
