@@ -234,12 +234,16 @@ print("Recuerde que si la posicicón es -1, entonces, el nombre no esta en la li
 
 def tuplprodu(product,pos):
   if pos==len(product):
-    return 0
-  else:
-    nom, cant, pre = product[pos]
-    valItem = pre * cant
-    return valItem+tuplprodu(product,pos+1)
-
+    return 0," ",0
+  nom, cant, pre = product[pos]
+  valItem = pre * cant
+  tot,nombprod,ingMax=tuplprodu(product,pos+1)
+  tot=valItem+tot
+  if valItem>ingMax:
+    ingMax=valItem
+    nombprod=nom
+  return tot,nombprod,ingMax
+  
 product= (
     ("Impresora_Epson", 5, 350000),
     ("Celular_HuaweiMAX", 10,1250000),
@@ -247,10 +251,11 @@ product= (
     ("Teclado_Lenovo", 15, 125000),
     ("Horno_Electrico_5L", 8, 375000))
 
-tot=tuplprodu(product,0)
+tot,nomPro,IngrMay=tuplprodu(product,0)
 print("")
 print(f"El Total de los productos vendidos es: ${tot}")
-print(f"El producto más vendido es: ${}")
+print(f"El producto más vendido es de: {nomPro}")
+print(f"El producto que generó el mayor ingreso es de: {nomPro}, con ventas por (${IngrMay})")
 print("Las unidades totales vendidas de todos los productos son: ",sum(i[1] for i in product))
-print("El promedio de las ventas totales es: ", tot/ len(product)
+print("El promedio de las ventas totales es: $", tot/ len(product))
 print("")
